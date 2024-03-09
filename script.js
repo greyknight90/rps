@@ -13,9 +13,13 @@ function getComputerChoice() {
 }
 
 
-function play(playerSelection, computerSelection) {
+function play() {
 
-    displayChoices();
+    let computerSelection = getComputerChoice();
+    let playerSelection = (prompt("Please enter your selection").toLowerCase());
+
+    displayChoices(playerSelection, computerSelection);
+    
     let result;
 
     if (playerSelection === computerSelection) {
@@ -32,13 +36,18 @@ function play(playerSelection, computerSelection) {
 }
 
 
-function displayChoices() {
-    console.log("Your selection: " + playerChoice);
-    console.log("Computer selection: " + computerChoice);
+function displayChoices(playerSelection, computerSelection) {
+    console.log("Your selection: " + playerSelection);
+    console.log("Computer selection: " + computerSelection);
 }
 
 
-let computerChoice = getComputerChoice();
-let playerChoice = (prompt("Please enter your selection").toLowerCase());
+function playGame() {
+    
+    for (i = 1; i <= 10; i++) {
+        console.log(play());
+    }
+}
 
-console.log(play(playerChoice, computerChoice));
+
+playGame();
