@@ -47,7 +47,7 @@ function playGame() {
         }
 
         console.log(result);
-        console.log(score);
+        console.log("Your score: " + score);
     }
 }
 
