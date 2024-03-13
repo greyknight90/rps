@@ -15,24 +15,7 @@ function getComputerChoice() {
 
 function play() {
 
-    let computerSelection = getComputerChoice();
-    let playerSelection = (prompt("Please enter your selection").toLowerCase());
-
-    displayChoices(playerSelection, computerSelection);
     
-    let result;
-
-    if (playerSelection === computerSelection) {
-        result = "Tie";
-    } else if ((playerSelection === 'rock' && computerSelection === 'scissors')
-                || (playerSelection === 'scissors' && computerSelection === 'paper')
-                || (playerSelection === 'paper' && computerSelection === 'rock')) {
-                    result = "You win";
-    } else {
-        result = "You lose";
-    }
-
-    return result;
 }
 
 
@@ -43,9 +26,28 @@ function displayChoices(playerSelection, computerSelection) {
 
 
 function playGame() {
-    
-    for (i = 1; i <= 10; i++) {
-        console.log(play());
+    let score = 0;
+    let result;
+
+    for (i = 1; i <= 5; i++) {
+        let computerSelection = getComputerChoice();
+        let playerSelection = (prompt("Please enter your selection").toLowerCase());
+
+        displayChoices(playerSelection, computerSelection);
+
+        if (playerSelection === computerSelection) {
+            result = "Tie";
+        } else if ((playerSelection === 'rock' && computerSelection === 'scissors')
+                    || (playerSelection === 'scissors' && computerSelection === 'paper')
+                    || (playerSelection === 'paper' && computerSelection === 'rock')) {
+                        result = "You win";
+                        score += 1;
+        } else {
+            result = "You lose";
+        }
+
+        console.log(result);
+        console.log(score);
     }
 }
 
