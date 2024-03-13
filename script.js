@@ -13,12 +13,6 @@ function getComputerChoice() {
 }
 
 
-function play() {
-
-    
-}
-
-
 function displayChoices(playerSelection, computerSelection) {
     console.log("Your selection: " + playerSelection);
     console.log("Computer selection: " + computerSelection);
